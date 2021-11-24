@@ -1,0 +1,39 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Shield : MonoBehaviour
+{
+    [Header("Set in Inspector")]
+    public float rotationsPerSecond = .1f;
+
+    [Header("Set Dynamically")]
+    public int levelShown = 0;
+
+    // Скрытые переменные, не появляющиеся в инспектора
+    Material mat; //a
+
+    void Start()
+    {
+        mat = GetComponent<Renderer>().material; //b
+    }
+
+    void Update()
+    {
+        // Прочитать текущую мощность защитного поля из объекта-одиночки Hero
+        int currLevel = Mathf.FloorToInt(Hero.S.shieldLevel); //c
+        // Если она отличается от levelShown..
+        if (levelShown != currLevel)
+        {
+            levelShown = currLevel;
+
+            // Скорректировать смещение в текстуре, чтобы отобразить поле с
+            // с другой мощностью
+            mat.mainTextureOffset = new Vector2(.2f * levelShown, 0); //d
+        }
+
+        // Поворачивать поле в каждом кадре с постоянной скоростью
+        float rZ = -(rotationsPerSecond * Time.time * 360) % 360f; //e
+        transform.rotation = Quaternion.Euler(0, 0, rZ);
+    }
+}
