@@ -25,8 +25,8 @@ public class Enemy_2 : Enemy
 
         // Выбрать случайную точку на правой границе экрана
         p1 = Vector3.zero; //b
-        p1.x = bndCheck.camWidth - bndCheck.radius;
-        p1.y= Random.Range(-bndCheck.camHeight, bndCheck.camHeight);
+        p1.x = bndCheck.camWidth + bndCheck.radius;
+        p1.y = Random.Range(-bndCheck.camHeight, bndCheck.camHeight);
 
         if (Random.value > .5f)
         {
