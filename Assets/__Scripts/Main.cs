@@ -16,6 +16,7 @@ public class Main : MonoBehaviour
     public WeaponType[] powerUpFrequency = new WeaponType[] {
                             WeaponType.blaster, WeaponType.blaster,
                             WeaponType.spread, WeaponType.shield };
+
     private BoundsCheck bndCheck;
     
     public void ShipDestroyed(Enemy e)
