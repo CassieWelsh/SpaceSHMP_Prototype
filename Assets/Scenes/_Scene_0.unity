@@ -1208,7 +1208,7 @@ MonoBehaviour:
     letter: B
     color: {r: 0, g: 1, b: 0.53101635, a: 1}
     projectilePrefab: {fileID: 9049523215291453769, guid: 596bf8a13c8c9ee4bb0206432020453a, type: 3}
-    projectileColor: {r: 1, g: 1, b: 1, a: 1}
+    projectileColor: {r: 1, g: 0, b: 0, a: 1}
     damageOnHit: 1
     continuousDamage: 0
     delayBetweenShots: 0.2
